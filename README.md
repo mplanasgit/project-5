@@ -83,7 +83,7 @@ As observed in the first scatter plot and depicted aswell by the SHAP summary pl
 ## 3- *Manual* training of models
 
 - Three models were *manually* trained: GradientBoostingRegressor, RandomForestRegressor and XGBRegressor, as they were within the top 3 ranked models in both LazyPredict and H2O AutoML.
-- XGBoost was used for **feature selection** (which variables contribute most to the price of diamonds; to compare it with AutoML's variable importance) and for **hyperparameter tuning** using GridSearchCV.
+- XGBoost was used for **feature selection** using Recursive Feature Elimination (RFE) from sklearn (which variables contribute most to the price of diamonds; to compare it with AutoML's variable importance) and for **hyperparameter tuning** using GridSearchCV.
 
 #### Feature selection
 
