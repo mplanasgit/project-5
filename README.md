@@ -25,9 +25,6 @@
 
 <img src="./src/output/lazypredict_models_without_outliers.jpg" />
 
-</br>
-</br>
-
 #### Example of **H2O AutoML**'s output:
 
 <img src="./src/output/automl_models_without_outliers.jpg" />
