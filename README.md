@@ -40,7 +40,7 @@ Each variable (feature) distribution and its influence to the price of the diamo
 
 The following plots show the best ranked models (based on lower RMSE value) obtained with each of the approaches. The cleaned datasets (with or without outliers) were split into training (80%) and test (20%), fit into the models, and the RMSE values were retrieved:
 
-<img src="./src/output/lazypredict_top5.jpg" width="370"/> <img src="./src/output/aml_top3.jpg" width="370"/>
+<img src="./src/output/lazypredict_top5.jpg" width="390"/> <img src="./src/output/aml_top3.jpg" width="390"/>
 
 Overall, removing the outliers results in slightly better models (based on RMSE only).
 
@@ -67,7 +67,7 @@ As it can be observed, the `carat` feature contributes the most to the models. A
 #### SHAP summary for model GBM_4
 > SHAP summary plot shows the contribution of the features for each instance (row of data). The sum of the feature contributions and the bias term is equal to the raw prediction of the model.
 
-The variables ``carat``, ``x`` and ``y`` contribute the most to each particular diamond.
+The variables ``carat``, ``x`` and ``y`` contribute the most to each particular diamond's price.
 
 <img src="./src/output/SHAP_GBM_model_AutoML.jpg"/>
 
@@ -93,7 +93,7 @@ As depicted by AutoML, the variables ``table``, ``depth``, ``cut``, ``color`` an
 
 #### Comparison of the models:
 
-<img src="./src/output/sklearn_models_feature_selection.jpg" width="500"/>
+<img src="./src/output/sklearn_models_feature_selection.jpg" width="700"/>
 
 ---
 
