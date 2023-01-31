@@ -11,7 +11,7 @@
 - The dataset included 15 diamonds (out of 40455) whose x/y/z features (dimensions of the diamond) had a value of zero. They were removed.
 - The features *cut, color* and *clarity* were categorical. They were **encoded** according to their corresponding value in the market: higher numbers for more valuable features. The original dataset (before encoding) can be seen on the left, and the encoded features on the right.
 
-<img src="./src/output/original_dataset.jpg" width="370"/> <img src="./src/output/encoded_dataset.jpg" width="370"/>
+<img src="./src/output/original_dataset.jpg" width="380"/> <img src="./src/output/encoded_dataset.jpg" width="370"/>
 
 ---
 
@@ -74,7 +74,7 @@ The model explainability methods included in H2O AutoML offer a great way of eas
 
 As depicted by AutoML, the variables ``table``, ``depth``, ``cut``, ``color`` and ``z`` contribute the less to diamonds' pricing:
 
-<img src="./src/output/feature_selection.jpg" width="400"/>
+<img src="./src/output/feature_selection.jpg"/>
 
 #### Comparison of the models:
 
