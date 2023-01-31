@@ -14,3 +14,5 @@ def plot_model_RMSE(df, title):
     plt.title(title, weight='bold', y = 1.02)
     plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
     return fig
+
+
