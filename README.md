@@ -4,14 +4,21 @@
 ## Main objective:
 - Predict the price of diamonds based on their characteristics (features) using Machine Learning.
 - To compare [LazyPredict](https://lazypredict.readthedocs.io/en/latest/), [H2O AutoML](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html) and regular (*manual*) model training approaches, using the Root Mean Squared Error (RMSE) metric.
-- To evaluate the presence of outliers in the dataset in the error of the predictions.
+- To evaluate the presence of outliers in the dataset in the models' error.
 
 ---
 ## Preparing the data
 - The dataset included 15 diamonds (out of 40455) whose x/y/z features (dimensions of the diamond) had a value of zero. They were removed.
-- The features *cut, color* and *clarity* were categorical. They were **encoded** according to their corresponding value in the market: higher numbers for more valuable features. The original dataset (before encoding) can be seen on the left, and the encoded features on the right.
+- The features ``cut``, ``color`` and ``clarity`` were categorical. They were **encoded** according to their corresponding value in the market: higher numbers for more valuable features. The original dataset (before encoding) can be seen on the left, and the encoded features on the right.
 
 <img src="./src/output/original_dataset.jpg" width="400"/> <img src="./src/output/encoded_dataset.jpg" width="370"/>
+
+Each variable (feature) distribution and its influence to the price of the diamond were visualized in a pairplot. Here is a scatter plot showing each diamond feature against the price of that particular diamond:
+
+<img src="./src/output/scatter_variables.jpg"/>
+
+- As it can be observed, some features seem to **contribute more** than others to the price of the diamonds, those are: ``carat``, ``x`` and ``y``.
+- There are some **outliers** in some categories. I will try to remove them and see how they affect the overall error of the predicting models.
 
 ---
 
@@ -46,20 +53,28 @@ The model explainability methods included in H2O AutoML offer a great way of eas
 #### Model correlation
 > This plot shows the correlation between the predictions of the models. By default, models are ordered by their similarity (as computed by hierarchical clustering).
 
+Overall, all models behave similarly (except GBM_grid_1_model_4), so we shouldn't see much difference.
+
 <img src="./src/output/model_correlation_AutoML.jpg"/>
 
 #### Variable importance heatmap
 > Variable importance heatmap shows variable importance across multiple models.
+
+As it can be observed, the `carat` feature contributes the most to the models. And now we see how different the model GBM_grid_1_model_4 is from the rest. 
 
 <img src="./src/output/variable_importance_heatmap.jpg"/>
 
 #### SHAP summary for model GBM_4
 > SHAP summary plot shows the contribution of the features for each instance (row of data). The sum of the feature contributions and the bias term is equal to the raw prediction of the model.
 
+The variables ``carat``, ``x`` and ``y`` contribute the most to each particular diamond.
+
 <img src="./src/output/SHAP_GBM_model_AutoML.jpg"/>
 
 #### Variable importance for model GBM_4
 > The variable importance plot shows the relative importance of the most important variables in the model.
+
+As observed in the first scatter plot and depicted aswell by the SHAP summary plot, the variables ``carat``, ``x`` and ``y`` are the most important, thus they influence the most the price of diamonds.
 
 <img src="./src/output/variable_importance_GBM_AutoML.jpg"/>
 
