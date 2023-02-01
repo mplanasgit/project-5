@@ -42,7 +42,7 @@ The following plots show the best ranked models (based on lower RMSE value) obta
 
 <img src="./src/output/lazypredict_top5.jpg" width="390"/> <img src="./src/output/aml_top3.jpg" width="390"/>
 
-Overall, removing the outliers results in slightly better models (based on RMSE only).
+Overall, removing the outliers results in slightly better models (based on RMSE only). It's important to mention that the H2O AutoML models were built with a ``max_runtime_secs = 60``. In addition, we can access the base models used to built the StackedEnsemble using `model.params['base_models']`. We can save StackedEnsemble model and retrieve its base models and parameters for a later retraining on new data.
 
 ---
 
